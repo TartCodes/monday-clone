@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import CategoriesContext from "../context";
 
@@ -12,6 +12,7 @@ const TicketPage = ({ editMode }) => {
  
   const { categories, setCategories } = useContext(CategoriesContext)
   const navigate = useNavigate();
+  let { id } = useParams()
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -22,6 +23,10 @@ const TicketPage = ({ editMode }) => {
       [name]: value,
     }));
   };
+
+  const fetchData = async () => {
+    const response = await axios.get(`http://localhost:8000/tickets/${id}`)
+  } 
 
   const handleSubmit = async (e) => {
     e.preventDefault()
