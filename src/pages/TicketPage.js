@@ -1,4 +1,4 @@
-import { useState, version } from "react";
+import { useState } from "react";
 
 const TicketPage = () => {
   const [formData, setFormData] = useState({
@@ -168,6 +168,34 @@ const TicketPage = () => {
                 </select>
               </>
             )}
+            <input type="submit" />
+          </section>
+
+          <section>
+            <label htmlFor="owner">Owner</label>
+            <input
+              id="owner"
+              name="owner"
+              type="text"
+              onChange={handleChange}
+              required={true}
+              value={formData.owner}
+            />
+
+            <label htmlFor="avatar">Avatar</label>
+            <input
+              id="avatar"
+              name="avatar"
+              type="url"
+              onChange={handleChange}
+              required={true}
+              value={formData.avatar}
+            />
+            <div className="image-preview">
+              {formData.avatar && (
+                <img src={formData.avatar} alt="avatar preview" /> //might have to change to image preview
+              )}
+            </div>
           </section>
         </form>
       </div>
