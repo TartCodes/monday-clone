@@ -1,18 +1,17 @@
 import TicketCard from '../components/TicketCard'
 
 const Dashboard = () => {
-
   const tickets = [
     {
       category: 'Q1 2022',
       color : 'red',
       title: 'NFT Safety 101 Video',
       owner: 'Matt T',
-      avatar: 'https://media-exp1.licdn.com/dms/image/C5603AQEHt6GbaiXpKg/profile-displayphoto-shrink_400_400/0/1517498119779?e=1672876800&v=beta&t=VXHxMhhDzb4XFVBvIAzhyKKR3qxYUYJKlbz95u5WuLE',
+      avatar: 'https://media.licdn.com/dms/image/C5603AQEHt6GbaiXpKg/profile-displayphoto-shrink_200_200/0/1517498119779?e=1672272000&v=beta&t=dE_Ljfkd66odutOmBIJLx49Z_L_D4XQmhcFJoBCq5_g',
       status: 'done',
       priority: 5,
       progress: 40,
-      descriptions: 'Make a video to showcase how to work with NFTs blah blah blah blah',
+      description: 'Make a video to showcase how to work with NFTs blah blah blah blah',
       timestamp: '2022-10-30T16:34'
     },
     {
@@ -20,11 +19,11 @@ const Dashboard = () => {
       color : 'red',
       title: 'Build and sell AI Model',
       owner: 'Matt T',
-      avatar: 'https://media-exp1.licdn.com/dms/image/C5603AQEHt6GbaiXpKg/profile-displayphoto-shrink_400_400/0/1517498119779?e=1672876800&v=beta&t=VXHxMhhDzb4XFVBvIAzhyKKR3qxYUYJKlbz95u5WuLE',
+      avatar: 'https://media.licdn.com/dms/image/C5603AQEHt6GbaiXpKg/profile-displayphoto-shrink_200_200/0/1517498119779?e=1672272000&v=beta&t=dE_Ljfkd66odutOmBIJLx49Z_L_D4XQmhcFJoBCq5_g',
       status: 'working on it',
       priority: 2,
       progress: 70,
-      descriptions: 'Make a video to work and make AIs blah blah blah blah',
+      description: 'Make a video to work and make AIs blah blah blah blah',
       timestamp: '2022-10-30T16:34'
     },
     {
@@ -32,19 +31,20 @@ const Dashboard = () => {
       color : 'blue',
       title: 'Build a bot',
       owner: 'Matt T',
-      avatar: 'https://media-exp1.licdn.com/dms/image/C5603AQEHt6GbaiXpKg/profile-displayphoto-shrink_400_400/0/1517498119779?e=1672876800&v=beta&t=VXHxMhhDzb4XFVBvIAzhyKKR3qxYUYJKlbz95u5WuLE',
+      avatar: 'https://media.licdn.com/dms/image/C5603AQEHt6GbaiXpKg/profile-displayphoto-shrink_200_200/0/1517498119779?e=1672272000&v=beta&t=dE_Ljfkd66odutOmBIJLx49Z_L_D4XQmhcFJoBCq5_g',
       status: 'working on it',
       priority: 3,
       progress: 10,
-      descriptions: 'Make a video around a bot blah blah blah blah',
+      description: 'Make a video around a bot blah blah blah blah',
       timestamp: '2022-10-30T16:34'
     }
   ]
-
+ 
   const uniqueCategories = [
-    ...new Set(tickets?.map(({ category }) => category ))
+    ...new Set(tickets?.map(({ category }) => category))
   ]
   console.log(uniqueCategories)
+ 
 
   return (
     <div className="dashboard">
@@ -53,6 +53,14 @@ const Dashboard = () => {
         {tickets && uniqueCategories?.map((uniqueCategory, categoryIndex) => (
           <div key={categoryIndex}>
             <h3>{uniqueCategory}</h3>
+            {tickets.filter(ticket => ticket.category === uniqueCategory)
+              .map((filteredTicket, _index) => (
+                <TicketCard
+                id={_index}
+                color={filteredTicket.color}
+                ticket={filteredTicket}
+                 />
+              ))}
           </div>
         ))}
         </div>      
