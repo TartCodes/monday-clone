@@ -17,8 +17,7 @@ const Dashboard = () => {
       timestamp: "2022-10-30T16:34",
     },
     {
-      category: "Q1 2022",
-      color: "red",
+      category: "Q1 2022",      
       title: "Build and sell AI Model",
       owner: "Matt T",
       avatar:
@@ -41,9 +40,12 @@ const Dashboard = () => {
       progress: 10,
       description: "Make a video around a bot blah blah blah blah",
       timestamp: "2022-10-30T16:34",
-    },
+    },  
   ];
 
+
+
+  
   //colors
 
   const colors = [
