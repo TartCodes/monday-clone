@@ -39,7 +39,7 @@ const TicketPage = ({editMode}) => {
 
   const categories = ["test1", "test2"];
 
-  console.log(formData);
+  console.log('formData',formData.status);
 
   return (
     <div className="ticket">
@@ -54,7 +54,7 @@ const TicketPage = ({editMode}) => {
               type="text"
               onChange={handleChange}
               required={true}
-              value={formData.title}
+              value={formData.title || ""}
             />
 
             <label htmlFor="description">Description</label>
@@ -64,7 +64,7 @@ const TicketPage = ({editMode}) => {
               type="text"
               onChange={handleChange}
               required={true}
-              value={formData.description}
+              value={formData.description || ""}
             />
 
             <label>Category</label>
@@ -74,7 +74,7 @@ const TicketPage = ({editMode}) => {
               onChange={handleChange}
             >
               {categories?.map((category, _index) => (
-                <option value={category}>{category}</option>
+                <option key={_index} value={category}>{category}</option>
               ))}
             </select>
 
@@ -84,7 +84,7 @@ const TicketPage = ({editMode}) => {
               name="category"
               type="text"
               onChange={handleChange}
-              value={formData.category}
+              value={formData.category || ""}
             />
 
             <label>Priority</label>
@@ -95,7 +95,7 @@ const TicketPage = ({editMode}) => {
                 type="radio"
                 onChange={handleChange}
                 value={1}
-                checked={formData.priority == 1}
+                checked={formData.priority === 1}
               />
               <label htmlFor="priority-1">1</label>
               <input
@@ -104,7 +104,7 @@ const TicketPage = ({editMode}) => {
                 type="radio"
                 onChange={handleChange}
                 value={2}
-                checked={formData.priority == 2}
+                checked={formData.priority === 2}
               />
               <label htmlFor="priority-2">2</label>
               <input
@@ -113,7 +113,7 @@ const TicketPage = ({editMode}) => {
                 type="radio"
                 onChange={handleChange}
                 value={3}
-                checked={formData.priority == 3}
+                checked={formData.priority === 3}
               />
               <label htmlFor="priority-3">3</label>
               <input
@@ -122,7 +122,7 @@ const TicketPage = ({editMode}) => {
                 type="radio"
                 onChange={handleChange}
                 value={4}
-                checked={formData.priority == 4}
+                checked={formData.priority === 4}
               />
               <label htmlFor="priority-4">4</label>
               <input
@@ -131,7 +131,7 @@ const TicketPage = ({editMode}) => {
                 type="radio"
                 onChange={handleChange}
                 value={5}
-                checked={formData.priority == 5}
+                checked={formData.priority === 5}
               />
               <label htmlFor="priority-5">5</label>
             </div>
@@ -142,7 +142,7 @@ const TicketPage = ({editMode}) => {
                   type="range"
                   id="progress"
                   name="progress"
-                  value={formData.progress}
+                  value={formData.progress || ""}
                   min="0"
                   max="100"
                   onChange={handleChange}
@@ -152,23 +152,23 @@ const TicketPage = ({editMode}) => {
                 <label>Status</label>
                 <select
                   name="status"
-                  value={formData.status}
+                  value={formData.status || ""}
                   onChange={handleChange}
                 >
-                  <option selected={formData.status == 'done'} value="done">
+                  <option selected={formData.status === 'done'} value="done">
                     Done
                   </option>
                   <option
-                    selected={formData.status == 'working on it'}
+                    selected={formData.status === 'working on it'}
                     value="working on it"
                   >
                     Working on it
                   </option>
-                  <option selected={formData.status == 'stuck'} value="stuck">
+                  <option selected={formData.status === 'stuck'} value="stuck">
                     Stuck
                   </option>
                   <option
-                    selected={formData.status == 'not started'}
+                    selected={formData.status === 'not started'}
                     value="not started"
                   >
                     Not Started
@@ -188,7 +188,7 @@ const TicketPage = ({editMode}) => {
               type="text"
               onChange={handleChange}
               required={true}
-              value={formData.owner}
+              value={formData.owner || ""}
             />
 
             <label htmlFor="avatar">Avatar</label>
@@ -198,7 +198,7 @@ const TicketPage = ({editMode}) => {
               type="url"
               onChange={handleChange}
               required={true}
-              value={formData.avatar}
+              value={formData.avatar || ""}
             />
             <div className="image-preview">
               {formData.avatar && (
