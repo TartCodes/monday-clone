@@ -24,17 +24,29 @@ const TicketPage = ({ editMode }) => {
     }));
   };  
 
-  useEffect(() => {
-    function fetchUrl(){
-      return `http://localhost:8000/tickets/${id}`
-    }
+  // useEffect(() => {
+  //   function fetchUrl(){
+  //     return `http://localhost:8000/tickets/${id}`
+  //   }
 
-    async function fetchData(){
-      const result = await axios.get(fetchUrl())
-      setFormData(result.data.data)
+  //   async function fetchData(){
+  //     const result = await axios.get(fetchUrl())
+  //     setFormData(result.data.data)
+  //   }
+  //   fetchData()
+  // }, [id]) 
+
+  const fetchData = async () => {
+    const response = await axios.get(`http://localhost:8000/tickets/${id}`)
+    console.log('AAAAAA', response)
+    setFormData(response.data.data)
+  }
+
+  useEffect(() => {
+    if (editMode) {
+      fetchData()
     }
-    fetchData()
-  }, [id]) 
+  }, [])
   
 
   const handleSubmit = async (e) => {
