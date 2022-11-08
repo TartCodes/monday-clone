@@ -10,3 +10,5 @@
 ![](https://i.imgur.com/kS3JwPr.gif)
 #Updating a task
 ![](https://i.imgur.com/2SazTXr.gif)
+#Deleting a task
+![](https://i.imgur.com/B37TETm.gif)
