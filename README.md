@@ -5,6 +5,7 @@
 2. Tweak styles
 3. Improve DB
 4. ~~IMPROVE THE ATTACHED GIF RECORDING I KNOW IT'S TERRIBLE!!!~~
+5. Gif quality still terrible
 
 #Adding a new task
 ![](https://i.imgur.com/kS3JwPr.gif)
