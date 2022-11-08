@@ -5,6 +5,6 @@
 2. Tweak styles
 3. Improve DB
 
-~~4. IMPROVE THE ATTACHED GIF RECORDING I KNOW IT'S TERRIBLE!!!~~
+  ~~4. IMPROVE THE ATTACHED GIF RECORDING I KNOW IT'S TERRIBLE!!!~~
 
 ![](https://i.imgur.com/kS3JwPr.gif)
