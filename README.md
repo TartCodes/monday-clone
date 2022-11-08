@@ -8,3 +8,5 @@
 
 #Adding a new task
 ![](https://i.imgur.com/kS3JwPr.gif)
+#Updating a task
+![](https://i.imgur.com/2SazTXr.gif)
